@@ -10,7 +10,7 @@ public class Code {
 		    public void run() {
 		    	try {
 		    		Clip clip = AudioSystem.getClip();
-		        	AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File("sound/" + url));
+		        	AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File(System.getProperty("user.dir")+"/sound/" + url));
 		        	clip.open(inputStream);
 		        	clip.start(); 
 		    	} catch (Exception e) {
@@ -23,7 +23,7 @@ public class Code {
 	{
 		//initialization
 		JFrame window = new JFrame("Clicker");
-		ImageIcon bubble = new ImageIcon("img/bubblewrap.png");
+		ImageIcon bubble = new ImageIcon(System.getProperty("user.dir")+"/img/bubblewrap.png");
 	
 		JLabel bubbledisplay = new JLabel(bubble);
 		int scores[] = {0};
